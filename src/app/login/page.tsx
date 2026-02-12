@@ -205,7 +205,7 @@ export default function LoginPage() {
                                 Hint: Select a country and use its access code
                             </p>
                             {selectedCountry && (
-                                <p className="text-[10px] text-olive-600 font-mono mt-1">
+                                <p className="text-[10px] text-olive-400 font-mono mt-1">
                                     Code: {countries.find((c) => c.code === selectedCountry)?.accessCode}
                                 </p>
                             )}
