@@ -82,27 +82,6 @@ export default function Navbar() {
 
                     {/* Actions */}
                     <div className="hidden md:flex items-center gap-3">
-                        {/* Reduced Motion Toggle */}
-                        <button
-                            onClick={toggleMotion}
-                            className="p-2 text-charcoal-400 hover:text-olive-400 transition-colors"
-                            title={reducedMotion ? 'Enable animations' : 'Reduce motion'}
-                        >
-                            <svg
-                                className="w-4 h-4"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                            >
-                                {reducedMotion ? (
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707a1 1 0 011.707.707v13.414a1 1 0 01-1.707.707L5.586 15z" />
-                                ) : (
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                )}
-                            </svg>
-                        </button>
-
                         {/* Auth */}
                         {isAuthenticated ? (
                             <div className="flex items-center gap-3">
@@ -176,21 +155,6 @@ export default function Navbar() {
                                 </Link>
                             ))}
                             <hr className="border-olive-900/30" />
-                            <div className="flex items-center justify-between px-4 py-2">
-                                <span className="text-xs text-charcoal-400 font-heading uppercase tracking-wider">
-                                    Motion
-                                </span>
-                                <button
-                                    onClick={toggleMotion}
-                                    className={`w-10 h-5 rounded-full transition-colors ${reducedMotion ? 'bg-charcoal-600' : 'bg-olive-600'
-                                        } relative`}
-                                >
-                                    <div
-                                        className={`w-4 h-4 bg-white rounded-full absolute top-0.5 transition-transform ${reducedMotion ? 'left-0.5' : 'left-5'
-                                            }`}
-                                    />
-                                </button>
-                            </div>
                             {isAuthenticated ? (
                                 <>
                                     <Link
