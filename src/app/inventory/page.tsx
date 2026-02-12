@@ -52,28 +52,7 @@ export default function InventoryPage() {
                                 Asset <span className="text-olive-500">Registry</span>
                             </h1>
                         </div>
-                        <div className="flex items-center gap-4">
-                            <div className="flex items-center gap-2 px-3 py-1.5 bg-charcoal-900/50 border border-charcoal-700 rounded backdrop-blur-sm">
-                                <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                                <span className="text-[10px] font-heading uppercase tracking-wider text-charcoal-400">
-                                    Database Live
-                                </span>
-                            </div>
-                            <div className="hidden md:flex bg-charcoal-900 border border-charcoal-700 rounded p-1">
-                                <button
-                                    onClick={() => setViewMode('grid')}
-                                    className={`p-1.5 rounded transition-all ${viewMode === 'grid' ? 'bg-olive-600 text-white' : 'text-charcoal-500 hover:text-charcoal-300'}`}
-                                >
-                                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 10h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 16h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z" /></svg>
-                                </button>
-                                <button
-                                    onClick={() => setViewMode('list')}
-                                    className={`p-1.5 rounded transition-all ${viewMode === 'list' ? 'bg-olive-600 text-white' : 'text-charcoal-500 hover:text-charcoal-300'}`}
-                                >
-                                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h16v4H4zm0 6h16v4H4zm0 6h16v4H4z" /></svg>
-                                </button>
-                            </div>
-                        </div>
+
                     </div>
                 </MotionWrapper>
 
@@ -127,13 +106,13 @@ export default function InventoryPage() {
                                             <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/20 group-hover:border-olive-500/50 transition-colors" />
                                             <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20 group-hover:border-olive-500/50 transition-colors" />
 
-                                            <div className="relative aspect-video overflow-hidden border-b border-charcoal-800">
+                                            <div className="relative aspect-video overflow-hidden border-b border-charcoal-800 bg-charcoal-950">
                                                 <img
                                                     src={`${asset.frameDir}/${asset.framePrefix}001.jpg`}
                                                     alt={asset.name}
                                                     className="w-full h-full object-cover object-[center_40%] scale-[1.12] group-hover:scale-125 transition-transform duration-700 saturate-[0.8] group-hover:saturate-100"
                                                 />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-900/20 to-transparent opacity-80" />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/60 to-charcoal-900/40 opacity-90" />
 
                                                 {/* Targeting Overlay */}
                                                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -191,7 +170,7 @@ export default function InventoryPage() {
                                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                                 className="lg:col-span-1"
                             >
-                                <div className="sticky top-28 bg-charcoal-900/80 backdrop-blur-md border border-olive-500/20 p-6 relative overflow-hidden">
+                                <div className="sticky top-28 bg-charcoal-900/80 backdrop-blur-md border border-olive-500/20 p-4 relative overflow-hidden max-h-[calc(100vh-8rem)] overflow-y-auto">
                                     {/* Tech Grid Background */}
                                     <div className="absolute inset-0 bg-grid-white/[0.02] pointer-events-none" />
                                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-olive-600 to-transparent" />
@@ -213,7 +192,7 @@ export default function InventoryPage() {
                                         </button>
                                     </div>
 
-                                    <div className="mb-6 relative group cursor-crosshair">
+                                    <div className="mb-4 relative group cursor-crosshair">
                                         <div className="aspect-video bg-black border border-charcoal-800 overflow-hidden relative">
                                             <img
                                                 src={`${selectedAsset.frameDir}/${selectedAsset.framePrefix}001.jpg`}
@@ -228,20 +207,20 @@ export default function InventoryPage() {
                                         </div>
                                     </div>
 
-                                    <h2 className="text-xl font-heading font-bold uppercase tracking-wide text-white mb-2">
+                                    <h2 className="text-lg font-heading font-bold uppercase tracking-wide text-white mb-1.5">
                                         {selectedAsset.name}
                                     </h2>
-                                    <p className="text-xs text-charcoal-400 font-mono leading-relaxed mb-6 border-l-2 border-charcoal-800 pl-3">
+                                    <p className="text-xs text-charcoal-400 font-mono leading-relaxed mb-4 border-l-2 border-charcoal-800 pl-3">
                                         {selectedAsset.description}
                                     </p>
 
-                                    <div className="space-y-4 mb-8">
-                                        <h3 className="text-[10px] font-heading uppercase tracking-[0.2em] text-charcoal-500 border-b border-charcoal-800 pb-2">
+                                    <div className="space-y-3 mb-4">
+                                        <h3 className="text-[10px] font-heading uppercase tracking-[0.2em] text-charcoal-500 border-b border-charcoal-800 pb-1.5">
                                             Technical Data
                                         </h3>
                                         <div className="grid gap-px bg-charcoal-800 border border-charcoal-800">
                                             {selectedAsset.specs.map((spec) => (
-                                                <div key={spec.label} className="grid grid-cols-2 bg-charcoal-900/50 p-2.5">
+                                                <div key={spec.label} className="grid grid-cols-2 bg-charcoal-900/50 p-2">
                                                     <span className="text-[10px] uppercase tracking-wider text-charcoal-500">
                                                         {spec.label}
                                                     </span>
@@ -253,7 +232,7 @@ export default function InventoryPage() {
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center justify-between mb-6 p-3 bg-charcoal-950/50 border border-charcoal-800 rounded">
+                                    <div className="flex items-center justify-between mb-4 p-2.5 bg-charcoal-950/50 border border-charcoal-800 rounded">
                                         <div className="flex flex-col">
                                             <span className="text-[9px] uppercase tracking-wider text-charcoal-500">Operational Status</span>
                                             <span className={`text-xs font-heading uppercase tracking-wider ${selectedAsset.status === 'operational' ? 'text-green-500' : 'text-amber-500'
@@ -268,7 +247,7 @@ export default function InventoryPage() {
                                     <button
                                         onClick={() => handleRequestAllocation(selectedAsset.id)}
                                         disabled={allocationRequested.includes(selectedAsset.id)}
-                                        className={`w-full py-3 text-[10px] font-heading uppercase tracking-[0.2em] transition-all duration-300 relative overflow-hidden group border ${allocationRequested.includes(selectedAsset.id)
+                                        className={`w-full py-2.5 text-[10px] font-heading uppercase tracking-[0.2em] transition-all duration-300 relative overflow-hidden group border ${allocationRequested.includes(selectedAsset.id)
                                             ? 'bg-olive-900/20 border-olive-500/50 text-olive-400 cursor-default'
                                             : 'bg-olive-600 border-transparent text-white hover:bg-olive-500'
                                             }`}
