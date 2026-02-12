@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #6b7f3f;
+  --color-primary-light: #8fa164;
+  --color-primary-dark: #3d4a25;
+  --color-bg: #0f1012;
+  --color-bg-secondary: #1a1c1e;
+  --color-bg-card: #1e2226;
+  --color-text: #e5e7e8;
+  --color-text-muted: #80888e;
+  --color-accent: #d4a017;
+  --color-teal: #14b8a6;
+  --color-border: rgba(107, 127, 63, 0.2);
+  --color-glow: rgba(107, 127, 63, 0.4);
+  --font-heading: var(--font-rajdhani);
+  --font-body: var(--font-inter);
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading), sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  ::selection {
+    background-color: rgba(107, 127, 63, 0.4);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: rgb(30, 34, 38);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--color-border);
+  }
+
+  .glow-border {
+    border: 1px solid var(--color-border);
+    box-shadow: 0 0 15px -3px var(--color-glow), inset 0 0 15px -3px rgba(107, 127, 63, 0.05);
+  }
+
+  .tactical-grid {
+    background-image:
+      linear-gradient(rgba(107, 127, 63, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(107, 127, 63, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #8fa164, #d4a017);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-olive-700 hover:bg-olive-600 text-white font-heading uppercase tracking-wider text-sm border border-olive-600 hover:border-olive-500 transition-all duration-300 hover:shadow-lg hover:shadow-olive-900/30;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent border border-olive-600 text-olive-400 hover:bg-olive-900/30 font-heading uppercase tracking-wider text-sm transition-all duration-300;
+  }
+
+  .status-indicator {
+    @apply inline-flex items-center gap-2 text-xs font-heading uppercase tracking-widest;
+  }
+
+  .status-dot {
+    @apply w-2 h-2 rounded-full animate-pulse-slow;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-heading uppercase tracking-wider;
+  }
+
+  .card {
+    @apply glass-panel rounded-lg overflow-hidden transition-all duration-300 hover:border-olive-500/40;
+  }
+
+  .bg-radial-glow {
+    background: radial-gradient(ellipse at 60% 50%, rgba(107, 127, 63, 0.06) 0%, transparent 60%);
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary-dark) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary-dark);
+    border-radius: 3px;
+  }
+}
