@@ -170,7 +170,7 @@ export default function InventoryPage() {
                                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                                 className="lg:col-span-1"
                             >
-                                <div className="sticky top-28 bg-charcoal-900/80 backdrop-blur-md border border-olive-500/20 p-4 relative overflow-hidden max-h-[calc(100vh-8rem)] overflow-y-auto">
+                                <div className="sticky top-28 bg-charcoal-900/80 backdrop-blur-md border border-olive-500/20 p-4 relative overflow-hidden">
                                     {/* Tech Grid Background */}
                                     <div className="absolute inset-0 bg-grid-white/[0.02] pointer-events-none" />
                                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-olive-600 to-transparent" />
