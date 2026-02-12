@@ -68,7 +68,7 @@ export default function ContactPage() {
                         {auth.accessCode && (
                             <div className="px-3 py-1 bg-olive-900/10 border border-olive-500/20 rounded backdrop-blur-sm">
                                 <span className="text-[10px] font-heading uppercase tracking-wider text-olive-400">
-                                    Clearance: {auth.accessCode} // Verified
+                                    Clearance: {auth.accessCode} / Verified
                                 </span>
                             </div>
                         )}
