@@ -201,7 +201,7 @@ export default function LoginPage() {
                         </button>
 
                         <div className="text-center pt-2">
-                            <p className="text-[10px] text-charcoal-600 font-heading uppercase tracking-wider">
+                            <p className="text-[10px] text-charcoal-400 font-heading uppercase tracking-wider">
                                 Hint: Select a country and use its access code
                             </p>
                             {selectedCountry && (
